@@ -16,8 +16,10 @@
     		?>
     		<br><a href="tancarSessio.php">Tancar sessió</a>
 		</div>
-		<h2>MENÚ PRINCIPAL</h2>
-		<h3><b>En construcció!!!!!!!!!!!</b></h3>
-		<a href="http://zend-cagafu.fjeclot.net/projecte/index.php">Torna a la pàgina inicial</a>
+		<h1>MENÚ PRINCIPAL</h1>
+		<h3><b>Selecciona una operació</b></h3>
+        <ul style="list-style-type:none">
+            <li><a href="http://zend-cagafu.fjeclot.net/projecte/visualitza.php"><button>Visualització d'usuari</button></a></li>
+        </ul>
 	</body>
 </html>

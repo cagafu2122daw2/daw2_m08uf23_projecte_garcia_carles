@@ -1,9 +1,9 @@
 <?php
-session_start();
-$sessionId = session_id();
-if (isset($_SESSION['codi'])){
-    header("location: menu.php");
-}
+    session_start();
+    $sessionId = session_id();
+    if (isset($_SESSION['codi'])){
+        header("location: menu.php");
+    }
 ?>
 <html>
 	<head>

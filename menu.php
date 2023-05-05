@@ -26,7 +26,11 @@
 		<h3><b>Selecciona una operació</b></h3>
         <ul style="list-style-type:none">
             <li><a href="http://zend-cagafu.fjeclot.net/projecte/visualitza.php"><button>Visualització d'usuari</button></a></li>
+            <li><br></li>
             <li><a href="http://zend-cagafu.fjeclot.net/projecte/crea.php"><button>Creació d'usuari</button></a></li>
+            <li><br></li>
+            <li><a href="http://zend-cagafu.fjeclot.net/projecte/esborrar.php"><button>Esborrament d'usuari</button></a></li>
+            <li><br></li>
         </ul>
 	</body>
 </html>

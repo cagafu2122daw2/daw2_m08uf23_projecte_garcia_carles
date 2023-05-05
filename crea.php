@@ -11,7 +11,7 @@
     	<meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    <title>VISUALITZACIÓ D'USUARI</title>	
+	    <title>CREACIÓ D'USUARI</title>	
     </head>
     <body>
     	<header style="height:25px;font-size: 14px;">
@@ -25,10 +25,10 @@
 			</div>
 		</header>
       	<hr>
-        <h2>VISUALITZACIÓ D'USUARI</h2>
+        <h2>CREACIÓ D'USUARI</h2>
         <form action="http://zend-cagafu.fjeclot.net/projecte/crea.php" method="POST">
-        	Id d'suari: <input type="text" name="uid"><br>
         	Unitat organitzativa: <input type="text" name="ou"><br>
+        	Id d'usuari: <input type="text" name="uid"><br>
         	uidNumber: <input type="number" name="uidn"><br>
         	gidNumber: <input type="number" name="gidn"><br>
         	Directori personal: <input type="text" name="pd"><br>
@@ -97,8 +97,8 @@
                 try {
                     $ldap->add($dn, $nova_entrada);
                     header("location: http://zend-cagafu.fjeclot.net/projecte/visualitza.php?ou=".$unorg."&usr=".$uid);
-                } catch (Laminas\Ldap\Exception\LdapException $e) {
-                    echo "Error al crear l'usuari: ".$e->getMessage();
+                } catch (Exception $e) {
+                    echo "<b>Error al crear l'usuari. Revisa les dades introduïdes.</b>";
                 }
             }
         ?>

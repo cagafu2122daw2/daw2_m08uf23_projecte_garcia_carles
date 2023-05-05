@@ -11,7 +11,7 @@
     	<meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    <title>VISUALITZACIÓ D'USUARI</title>	
+	    <title>ESBORRAMENT D'USUARI</title>	
     </head>
     <body>
     	<header style="height:25px;font-size: 14px;">
@@ -25,8 +25,8 @@
 			</div>
 		</header>
       	<hr>
-        <h2>VISUALITZACIÓ D'USUARI</h2>
-        <form action="http://zend-cagafu.fjeclot.net/projecte/visualitza.php" method="GET">
+        <h2>ESBORRAMENT D'USUARI</h2>
+        <form action="http://zend-cagafu.fjeclot.net/projecte/esborrar.php" method="POST">
             Unitat organitzativa: <input type="text" name="ou"><br>
             Id d'usuari: <input type="text" name="usr"><br>
             <input type="submit"/>
@@ -35,24 +35,28 @@
         <?php
             require 'vendor/autoload.php';
             use Laminas\Ldap\Ldap;
-            ini_set('display_errors',0);
-            if ($_GET['usr'] && $_GET['ou']){
-                $domini = 'dc=fjeclot,dc=net';
+            ini_set('display_errors', 0);
+            if(isset($_POST["usr"],$_POST["ou"])){
+                $uid = $_POST["usr"];
+                $unorg = $_POST["ou"];
+                $dn = 'uid='.$uid.',ou='.$unorg.',dc=fjeclot,dc=net';
                 $opcions = [
                     'host' => 'zend-cagafu.fjeclot.net',
-                    'username' => "cn=admin,$domini",
+                    'username' => 'cn=admin,dc=fjeclot,dc=net',
                     'password' => 'fjeclot',
                     'bindRequiresDn' => true,
                     'accountDomainName' => 'fjeclot.net',
                     'baseDn' => 'dc=fjeclot,dc=net',
                 ];
+                #
+                # Esborrant l'entrada
                 $ldap = new Ldap($opcions);
                 $ldap->bind();
-                $entrada='uid='.$_GET['usr'].',ou='.$_GET['ou'].',dc=fjeclot,dc=net';
-                $usuari=$ldap->getEntry($entrada);
-                echo "<b><u>".$usuari["dn"]."</b></u><br>";
-                foreach ($usuari as $atribut => $dada) {
-                    if ($atribut != "dn") echo $atribut.": ".$dada[0].'<br>';
+                try{
+                    $ldap->delete($dn);
+                    echo "<b>Entrada esborrada</b><br>";
+                } catch (Exception $e){
+                    echo "<b>Aquesta entrada no existeix. Revisa les dades introduïdes</b><br>";
                 }
             }
         ?>

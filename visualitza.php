@@ -50,9 +50,13 @@
                 $ldap->bind();
                 $entrada='uid='.$_GET['usr'].',ou='.$_GET['ou'].',dc=fjeclot,dc=net';
                 $usuari=$ldap->getEntry($entrada);
-                echo "<b><u>".$usuari["dn"]."</b></u><br>";
-                foreach ($usuari as $atribut => $dada) {
-                    if ($atribut != "dn") echo $atribut.": ".$dada[0].'<br>';
+                if (!$usuari) {
+                    echo "<b>No s'ha trobat l'usuari. Revisa les dades introduïdes.</b>";
+                } else {
+                    echo "<b><u>".$usuari["dn"]."</b></u><br>";
+                    foreach ($usuari as $atribut => $dada) {
+                        if ($atribut != "dn") echo $atribut.": ".$dada[0].'<br>';
+                    }
                 }
             }
         ?>

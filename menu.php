@@ -31,6 +31,7 @@
             <li><br></li>
             <li><a href="http://zend-cagafu.fjeclot.net/projecte/esborrar.php"><button>Esborrament d'usuari</button></a></li>
             <li><br></li>
+            <li><a href="http://zend-cagafu.fjeclot.net/projecte/modifica.php"><button>Modificació d'usuari</button></a></li>
         </ul>
 	</body>
 </html>

@@ -45,7 +45,7 @@ if (!isset($_SESSION['codi'])){
             <input type="radio" name="camp" value="title"> Títol<br>
             <input type="radio" name="camp" value="description"> Descripció<br>
             <br>
-            Nou valor: <input type="text" name="nou_valor"><br>
+            Nou valor: <input type="text" name="nou_valor"><br><br>
             <input type="submit"/>
             <input type="reset"/>
         </form><br><br><br>        

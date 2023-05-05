@@ -40,7 +40,7 @@
         	Mòbil: <input type="text" name="mbl"><br>
         	Número de telèfon: <input type="text" name="tlf"><br>
         	Títol: <input type="text" name="titl"><br>
-        	Descripció: <input type="text" name="des"><br>
+        	Descripció: <input type="text" name="des"><br><br>
             <input type="submit"/>
             <input type="reset"/>
         </form><br><br><br>

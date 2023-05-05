@@ -28,7 +28,7 @@
         <h2>VISUALITZACIÓ D'USUARI</h2>
         <form action="http://zend-cagafu.fjeclot.net/projecte/visualitza.php" method="GET">
             Unitat organitzativa: <input type="text" name="ou"><br>
-            Id d'usuari: <input type="text" name="usr"><br>
+            Id d'usuari: <input type="text" name="usr"><br><br>
             <input type="submit"/>
             <input type="reset"/>
         </form><br><br><br>

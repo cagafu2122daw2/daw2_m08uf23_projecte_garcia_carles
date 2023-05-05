@@ -23,7 +23,7 @@
 		</header>
       	<hr>
 		<h1>MENÚ PRINCIPAL</h1>
-		<h3><b>Selecciona una operació</b></h3>
+		<h3><b>Selecciona una operació a realitzar:</b></h3>
         <ul style="list-style-type:none">
             <li><a href="http://zend-cagafu.fjeclot.net/projecte/visualitza.php"><button>Visualització d'usuari</button></a></li>
             <li><br></li>
